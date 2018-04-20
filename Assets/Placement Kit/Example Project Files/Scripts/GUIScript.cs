@@ -48,16 +48,16 @@ public class GUIScript : MonoBehaviour {
         {
             switch (pressedBtn.name)
             {
-                case "BotFactory":
+                case "BUILD_Button1":
                     bm.SelectBuilding(0);
                     break;
-                case "TankFactory":
+                case "BUILD_Button2":
                     bm.SelectBuilding(1);
                     break;
-                case "Metal":
+                case "BUILD_Button3":
                     bm.SelectBuilding(2);
                     break;
-                case "Energy":
+                case "BUILD_Button4":
                     bm.SelectBuilding(3);
                     break;
 
