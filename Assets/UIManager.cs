@@ -10,13 +10,30 @@ public class UIManager : MonoBehaviour {
 
     public GameObject Bot1UI;
 	public GameObject Tank1UI;
-	// Use this for initialization
-	void Start () {
+
+    public GameObject BotUI;
+    public GameObject TankUI;
+    // Use this for initialization
+    void Start () {
 
 	}
-
-	// Update is called once per frame
-	public void FixedUpdate ()
+    private void Update()
+    {
+        if (BotFactory.Count >= 1 || TankFactory.Count >= 1)
+        {
+            Debug.Log("activate");
+            BotUI.SetActive(false);
+            TankUI.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("DEactivate");
+            BotUI.SetActive(true);
+            TankUI.SetActive(true);
+        }
+    }
+    // Update is called once per frame
+    public void FixedUpdate ()
     {
         Bot1UI.GetComponent<ButtonController>().Factory = BotFactory;
         if (BotFactory.Count >= 1)
@@ -84,4 +101,6 @@ public class UIManager : MonoBehaviour {
                 Tank1UI.GetComponent<ButtonController>().addFactory(factory);
         }*/
     }
+
+
 }

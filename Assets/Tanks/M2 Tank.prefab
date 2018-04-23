@@ -465,7 +465,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963044983534072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.87, y: 2.0036926, z: 37.356934}
+  m_LocalPosition: {x: 15.64, y: 2.0066428, z: -34.743187}
   m_LocalScale: {x: 1.4125937, y: 1.412594, z: 1.4125947}
   m_Children:
   - {fileID: 4213193960909678}
@@ -1100,8 +1100,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.5, y: 2.25, z: 9.5}
-  m_Center: {x: 0, y: 1.125, z: 1.23}
+  m_Size: {x: 3.5, y: 2.25, z: 7.1541195}
+  m_Center: {x: 0, y: 1.125, z: 0.05705932}
 --- !u!65 &65736933653399150
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1177,6 +1177,10 @@ MonoBehaviour:
   dest: {x: 0, y: 0, z: 0}
   thisUnit: {fileID: 1963044983534072}
   destPoint: {fileID: 1716286754887974, guid: 4b11a2c0a30e4e84686b82a798b479d7, type: 2}
+  airplane: 0
+  airSpeed: 0
+  airRotationSpeed: 0
+  airMove: 0
 --- !u!114 &114966990345100312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1216,6 +1220,7 @@ MonoBehaviour:
   rotationSpeed: 5
   attackRange: 35
   badUnit: 1
+  hasAnimation: 0
   dirObj: {fileID: 1708880664455906}
 --- !u!195 &195900553977178450
 NavMeshAgent:
@@ -1225,7 +1230,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1963044983534072}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 4.04
+  m_Radius: 3.25
   m_Speed: 6
   m_Acceleration: 4
   avoidancePriority: 50

@@ -5,8 +5,10 @@ public class GUIScript : MonoBehaviour {
 
     public BuildManager bm;
     public Canvas cv;
-    public Button BotFactory, TankFactory, Metal, Energy;
-    bool buildopen = false;
+    public Button BotFactory, TankFactory;
+    bool buildopen = true;
+    public GameObject BotUI;
+    public GameObject TankUI;
 
     /*
     void Start () {
@@ -27,8 +29,6 @@ public class GUIScript : MonoBehaviour {
                 //bm.DeactivateBuildingmode();
                 BotFactory.gameObject.SetActive(false);
                 TankFactory.gameObject.SetActive(false);
-                Metal.gameObject.SetActive(false);
-                Energy.gameObject.SetActive(false);
                 pressedBtn.image.color = Color.white;
                 buildopen = false;
             }
@@ -37,8 +37,6 @@ public class GUIScript : MonoBehaviour {
                 //bm.ActivateBuildingmode();
                 BotFactory.gameObject.SetActive(true);
                 TankFactory.gameObject.SetActive(true);
-                Metal.gameObject.SetActive(true);
-                Energy.gameObject.SetActive(true);
                 pressedBtn.image.color = new Color(255, 0, 255);
                 buildopen = true;
 
@@ -72,6 +70,28 @@ public class GUIScript : MonoBehaviour {
 
     void Update()
     {
+        if (BotUI.activeSelf)
+        {
+            BotFactory.gameObject.SetActive(false);
+            TankFactory.gameObject.SetActive(false);
+        }
+        if (!BotUI.activeSelf)
+        {
+            BotFactory.gameObject.SetActive(true);
+            TankFactory.gameObject.SetActive(true);
+        }
+
+        if (TankUI.activeSelf)
+        {
+            BotFactory.gameObject.SetActive(false);
+            TankFactory.gameObject.SetActive(false);
+        }
+        if (!TankUI.activeSelf)
+        {
+            BotFactory.gameObject.SetActive(true);
+            TankFactory.gameObject.SetActive(true);
+        }
+
         if (buildopen)
         {
             if (!bm.isBuildingEnabled)
@@ -81,12 +101,6 @@ public class GUIScript : MonoBehaviour {
 
                 if (TankFactory.image.color != Color.white)
                     TankFactory.image.color = Color.white;
-
-                if (Metal.image.color != Color.white)
-                    Metal.image.color = Color.white;
-
-                if (Energy.image.color != Color.white)
-                    Energy.image.color = Color.white;
             }
         }
     }
